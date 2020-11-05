@@ -1,4 +1,4 @@
-FROM haskell:8.10.2
+FROM haskell:8.10
 # FROM haskell:7.10
 
 # will ease up the update process
