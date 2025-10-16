@@ -10,8 +10,8 @@ ENV PANDOC_VERSION "3.8.2"
 RUN cabal update && cabal install pandoc-${PANDOC_VERSION}
 
 # update /etc/apt/sources.list to stretch distribution
-RUN echo "deb http://ftp.us.debian.org/debian/ stretch main contrib non-free" | tee -a /etc/apt/sources.list
-RUN echo "deb-src http://ftp.us.debian.org/debian/ stretch main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian-security stretch/updates main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "deb-src http://archive.debian.org/debian-security stretch/updates main contrib non-free" | tee -a /etc/apt/sources.list
 
 # install latex packages
 RUN apt-get update -y \
