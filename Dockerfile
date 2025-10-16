@@ -9,9 +9,9 @@ ENV PANDOC_VERSION "3.8.2"
 # install pandoc
 RUN cabal update && cabal install pandoc-${PANDOC_VERSION}
 
-# update /etc/apt/sources.list to stretch distribution
-RUN echo "deb http://archive.debian.org/debian-security bookworm/updates main contrib non-free" | tee -a /etc/apt/sources.list
-RUN echo "deb-src http://archive.debian.org/debian-security bookworm/updates main contrib non-free" | tee -a /etc/apt/sources.list
+# update /etc/apt/sources.list to bookworm distribution
+RUN echo "deb http://deb.debian.org/debian bookworm main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "deb-src http://security.debian.org/debian-security bookworm-security main contrib non-free" | tee -a /etc/apt/sources.list
 
 # install latex packages
 RUN apt-get update -y \
