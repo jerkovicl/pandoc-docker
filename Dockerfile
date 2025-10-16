@@ -1,10 +1,10 @@
-FROM haskell:8.10
-# FROM haskell:7.10
+#FROM haskell:8.10
+FROM haskell:9.12.2
 
 # will ease up the update process
 # updating this env variable will trigger the automatic build of the Docker image
-# ENV PANDOC_VERSION "1.16.0.2"
-ENV PANDOC_VERSION "2.11.1" 
+# ENV PANDOC_VERSION "2.11.1"
+ENV PANDOC_VERSION "3.8.2" 
 
 # install pandoc
 RUN cabal update && cabal install pandoc-${PANDOC_VERSION}
